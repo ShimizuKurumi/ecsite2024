@@ -3,6 +3,10 @@ html {
   font-size: 16px;
 }
 
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
 img {
   width: 100%;
 }
@@ -22,7 +26,7 @@ img {
 }
 
 .article {
-  width: 25%;
+  width: 28%;
   font-weight: bold;
 }
 .article__img {
@@ -37,7 +41,7 @@ img {
   padding: 10rem 0;
 }
 .main__inner {
-  width: 60%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -48,7 +52,7 @@ img {
 .main__inner::after {
   content: "";
   display: block;
-  width: 25%;
+  width: 28%;
   /* .boxに指定したwidthと同じ幅を指定する */
   height: 0;
 }
@@ -72,5 +76,51 @@ img {
   color: #222222;
   font-size: 1rem;
   font-weight: bold;
+}
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-inline: auto;
+  background-color: #03A688;
+  font-size: 2rem;
+  border-top: #222222 solid 2px;
+  border-bottom: #222222 solid 2px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.loop {
+  -webkit-animation: loop 10s linear infinite;
+          animation: loop 10s linear infinite;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.loop2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: loop 10s -5s linear infinite;
+          animation: loop 10s -5s linear infinite;
+}
+
+@-webkit-keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 /*# sourceMappingURL=style.css.map */
