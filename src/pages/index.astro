@@ -6,8 +6,11 @@ const workPages = await getCollection('goods');
 ---
 
 <Layout>
-<main>
+<main class="main">
+  <h2 class="section_title">Item</h2>
+  <div class="main__inner">
   {workPages.map(productPage => (<Goodscard title={productPage.data.title} href=`/goods/${productPage.slug}` thumbnail={productPage.data.thumbnail} body={productPage.data.description} />
 ))}
+  </div>
 </main>
 </Layout>
