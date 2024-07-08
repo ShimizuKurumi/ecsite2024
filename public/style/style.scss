@@ -3,10 +3,7 @@ $text-color: #222222;
 $article-color: #F2E85E;
 $white-color: #ffffff;
 $green-color: #03A688;
-
-html {
-    font-size: 16px;
-}
+$pink-color: #F2357B;
 
 body {
     font-family: "Noto Sans JP", sans-serif;
@@ -34,6 +31,7 @@ img {
 .article {
     width: 28%;
     font-weight: bold;
+    margin-bottom: 8rem;
 
     &__img {
         width: 100%;
@@ -41,6 +39,42 @@ img {
         border: $text-color 2px solid;
     }
 
+    &__group {
+        position: relative;
+    }
+
+    &__price {
+        font-size: 1.3rem;
+        margin-top: 0.5rem;
+    }
+
+    &__title {
+        font-size: 1.2rem;
+    }
+
+    &__soldout {
+        background-color: $pink-color;
+        display: inline-block;
+        color: $white-color;
+        padding: 0.5rem 2rem;
+        position: absolute;
+        left: -1rem;
+        font-size: 1.2rem;
+        top: -1rem;
+        transform: rotate(-15deg);
+    }
+}
+
+.article__soldout[data-id=none] {
+    display: none;
+}
+
+.zeikomi {
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin-left: 0.2rem;
+    color: $text-color;
+    font-weight: 500;
 }
 
 .main {
@@ -124,4 +158,107 @@ img {
     100% {
         transform: translateX(-100%);
     }
+}
+
+.footer {
+    background-color: $text-color;
+    text-align: center;
+
+    &__img {
+        width: 8%;
+        margin-bottom: 3rem;
+    }
+
+    &__copy {
+        color: #959595;
+        font-size: 0.9rem;
+    }
+
+    &__inner {
+        padding: 5rem;
+    }
+}
+
+.goods {
+    &__title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    &__head {
+        margin-bottom: 2rem;
+    }
+
+    &__ul {
+        margin-bottom: 2rem;
+    }
+
+    &__li {
+        margin-bottom: 0.5rem;
+    }
+
+    &__inner {
+        display: flex;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__img {
+        width: 50%;
+        border: $text-color 2px solid;
+    }
+
+    &__price {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $pink-color;
+    }
+
+    &__caption-group {
+        width: 40%;
+    }
+
+    &__text {
+        line-height: 1.75;
+        letter-spacing: 0.03rem;
+        margin-bottom: 4rem;
+    }
+
+    &__purchase {
+        display: block;
+        background-color: $text-color;
+        color: $white-color;
+        width: 100%;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        margin-top: 2rem;
+    }
+
+    &__notes {
+        margin-top: 1rem;
+    }
+
+}
+
+input[type=number] {
+    background-color: $white-color;
+    width: 5rem;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    border: $text-color solid 2px;
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+label {
+    display: block;
+}
+
+i {
+    color: $white-color;
+    padding-right: 0.5rem;
 }

@@ -1,8 +1,4 @@
 @charset "UTF-8";
-html {
-  font-size: 16px;
-}
-
 body {
   font-family: "Noto Sans JP", sans-serif;
 }
@@ -28,11 +24,45 @@ img {
 .article {
   width: 28%;
   font-weight: bold;
+  margin-bottom: 8rem;
 }
 .article__img {
   width: 100%;
   margin-bottom: 1rem;
   border: #222222 2px solid;
+}
+.article__group {
+  position: relative;
+}
+.article__price {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+.article__title {
+  font-size: 1.2rem;
+}
+.article__soldout {
+  background-color: #F2357B;
+  display: inline-block;
+  color: #ffffff;
+  padding: 0.5rem 2rem;
+  position: absolute;
+  left: -1rem;
+  font-size: 1.2rem;
+  top: -1rem;
+  transform: rotate(-15deg);
+}
+
+.article__soldout[data-id=none] {
+  display: none;
+}
+
+.zeikomi {
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin-left: 0.2rem;
+  color: #222222;
+  font-weight: 500;
 }
 
 .main {
@@ -122,5 +152,91 @@ img {
   100% {
     transform: translateX(-100%);
   }
+}
+.footer {
+  background-color: #222222;
+  text-align: center;
+}
+.footer__img {
+  width: 8%;
+  margin-bottom: 3rem;
+}
+.footer__copy {
+  color: #959595;
+  font-size: 0.9rem;
+}
+.footer__inner {
+  padding: 5rem;
+}
+
+.goods__title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.goods__head {
+  margin-bottom: 2rem;
+}
+.goods__ul {
+  margin-bottom: 2rem;
+}
+.goods__li {
+  margin-bottom: 0.5rem;
+}
+.goods__inner {
+  display: flex;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.goods__img {
+  width: 50%;
+  border: #222222 2px solid;
+}
+.goods__price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #F2357B;
+}
+.goods__caption-group {
+  width: 40%;
+}
+.goods__text {
+  line-height: 1.75;
+  letter-spacing: 0.03rem;
+  margin-bottom: 4rem;
+}
+.goods__purchase {
+  display: block;
+  background-color: #222222;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+}
+.goods__notes {
+  margin-top: 1rem;
+}
+
+input[type=number] {
+  background-color: #ffffff;
+  width: 5rem;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  border: #222222 solid 2px;
+  margin-left: 1rem;
+  display: inline-block;
+}
+
+label {
+  display: block;
+}
+
+i {
+  color: #ffffff;
+  padding-right: 0.5rem;
 }
 /*# sourceMappingURL=style.css.map */

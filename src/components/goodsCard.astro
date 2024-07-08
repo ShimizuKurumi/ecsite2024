@@ -1,11 +1,24 @@
 ---
-const { href, title, body, thumbnail } = Astro.props;
+const { href, title, body, thumbnail, price, state } = Astro.props;
+console.log(Astro.props);
+let statetext;
+if (state === true) {
+  // soldout の文字列を表示
+  statetext = "soldout"; // 表示
+} else {
+  // 非表示にする
+  // 非表示
+  statetext = "none"; // 表示
+}
 ---
 
 <article class="article">
   <a href={href} class="article__link">
-    <img src=`/images/${thumbnail}` alt={title} class="article__img" />
-    <h2>{title}</h2>
-    <p>{body}</p>
+    <div class="article__group">
+      <p class="article__soldout" data-id={statetext}>SOLDOUT</p>
+      <img src=`/images/${thumbnail}` alt={title} class="article__img" />
+    </div>
+    <h2 class="article__title">{title}</h2>
+    <p class="article__price">¥{price}<span class="zeikomi">(税込) </span></p>
   </a>
 </article>

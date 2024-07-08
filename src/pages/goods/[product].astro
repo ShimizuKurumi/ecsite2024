@@ -2,20 +2,52 @@
 import Layout from "../../layouts/Layout.astro";
 
 import goods from "../../data/goods.json";
-export const getStaticPaths = async() => {
+export const getStaticPaths = async () => {
   return goods.map(({ url }) => {
     return {
-      params: { product : url },
-    }
+      params: { product: url },
+    };
   });
 };
 const { product } = Astro.params;
-const goodsData = goods.find(({url}) => product === url);
-
+const goodsData = goods.find(({ url }) => product === url);
 ---
 
 <Layout>
-<p>{goodsData.name}</p>
-<p>{goodsData.price}</p>
-<img src=`/images/${goodsData.itemphotos[0]}`>
+  <main class="main goods">
+    <div class="goods__inner">
+      <img src=`/images/${goodsData.itemphotos[0]}` class="goods__img" />
+
+      <div class="goods__caption-group">
+        <div class="goods__head">
+          <p class="goods__title">{goodsData.name}</p>
+          <p class="goods__price">
+            ¥{goodsData.price}<span class="zeikomi">(税込)</span>
+          </p>
+        </div>
+        <ul class="goods__ul">
+          <li class="goods__li">＜品番＞{goodsData.id}</li>
+          <li class="goods__li">＜カラー＞{goodsData.colors}</li>
+          <li class="goods__li">＜販売元＞{goodsData.maker}</li>
+        </ul>
+
+        <p class="goods__text">{goodsData.text}</p>
+
+        <div class="goods-flex">
+          <label
+            >数量<input type="number" name="number" max="10" min="1" /></label
+          >
+          <button class="goods__purchase"
+            ><i class="fa-solid fa-cart-shopping"></i>カートに入れる</button
+          >
+
+          <p class="goods__notes">
+            ※商品ご注文の際は、サイズ・カラー・数量を再確認の上、間違いのないようご注意ください。また、返品・交換は未使用品に限ります。
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
 </Layout>
+<script src="https://kit.fontawesome.com/e1b45fa584.js" crossorigin="anonymous"
+></script>
