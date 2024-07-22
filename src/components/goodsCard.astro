@@ -16,7 +16,11 @@ if (state === true) {
   <a href={href} class="article__link">
     <div class="article__group">
       <p class="article__soldout" data-id={statetext}>SOLDOUT</p>
-      <img src=`/images/${thumbnail}` alt={title} class="article__img" />
+      <img
+        src=`/12_ecsite/images/${thumbnail}`
+        alt={title}
+        class="article__img"
+      />
     </div>
     <h2 class="article__title">{title}</h2>
     <p class="article__price">¥{price}<span class="zeikomi">(税込) </span></p>

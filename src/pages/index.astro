@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Goodscard from "../components/goodsCard.astro";
 import { getCollection } from "astro:content";
 const workPages = await getCollection("goods");
-console.log(workPages);
 ---
 
 <Layout>
@@ -14,7 +13,7 @@ console.log(workPages);
         workPages.map((productPage) => (
           <Goodscard
             title={productPage.data.title}
-            href=`/goods/${productPage.slug}`
+            href=`/12_ecsite/goods/${productPage.slug}`
             thumbnail={productPage.data.thumbnail}
             body={productPage.data.description}
             price={productPage.data.price}
@@ -23,5 +22,43 @@ console.log(workPages);
         ))
       }
     </div>
-  </main>
+
+    <div class="btn">
+<a class="btn__more">MORE</a>
+</div>
+ </main>
 </Layout>
+
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var loadMoreButton = document.querySelector(".btn__more");
+        var cards = document.querySelectorAll(".article");
+
+        // 最初に表示する6つのカードを展開状態にする
+        cards.forEach(function (card, index) {
+          if (index >= 6) {
+            card.classList.remove("expanded");
+          } else {
+            card.classList.add("expanded");
+          }
+        console.log(card);
+
+        });
+
+        // ボタンをクリックしたときの処理
+        loadMoreButton.addEventListener("click", function () {
+          cards.forEach(function (card, index) {
+            if (index >= 6) {
+              card.classList.toggle("expanded");
+            }
+          });
+
+          // ボタンのテキストを切り替える
+          if (loadMoreButton.textContent === "CLOSE") {
+            loadMoreButton.textContent = "MORE";
+          } else {
+            loadMoreButton.textContent = "CLOSE";
+          }
+        });
+      });
+    </script>

@@ -10,4 +10,4 @@ colors: 金
 maker: 川原本舗
 ---
 
-![川原本舗サイン入りステッカー](/images/kawaharahonpo01.jpg)
+![川原本舗サイン入りステッカー](/12_ecsite/images/kawaharahonpo01.jpg)

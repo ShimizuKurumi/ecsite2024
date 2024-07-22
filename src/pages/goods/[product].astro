@@ -11,12 +11,62 @@ export const getStaticPaths = async () => {
 };
 const { product } = Astro.params;
 const goodsData = goods.find(({ url }) => product === url);
+
+const { href, title, body, thumbnail, price, state } = Astro.props;
+let statetext;
+
+console.log(goodsData.state);
+
+if (goodsData.state === true) {
+  // soldout の文字列を表示
+  statetext = "soldout"; // 表示
+} else {
+  // 非表示にする
+  // 非表示
+  statetext = "none"; // 表示
+}
 ---
 
 <Layout>
   <main class="main goods">
     <div class="goods__inner">
-      <img src=`/images/${goodsData.itemphotos[0]}` class="goods__img" />
+      <!-- <img
+        src=`/12_ecsite/images/${goodsData.itemphotos[0]}`
+        class="goods__img"
+      /> -->
+      <div class="img-switcher">
+        <p class="article__soldout" data-id={statetext}>SOLDOUT</p>
+
+        <img
+          id="mainImg"
+          class="mainImg"
+          src=`/12_ecsite/images/${goodsData.itemphotos[0]}`
+          alt="犬1"
+        />
+        <div class="thumbnails">
+          <button class="thumb-btn active">
+            <img
+              class="thumb-img"
+              src=`/12_ecsite/images/${goodsData.itemphotos[0]}`
+              alt="犬1"
+            />
+          </button>
+          <button class="thumb-btn">
+            <img
+              class="thumb-img"
+              src=`/12_ecsite/images/${goodsData.itemphotos[0]}`
+              alt="犬2"
+            />
+          </button>
+          <button class="thumb-btn">
+            <img
+              class="thumb-img"
+              src=`/12_ecsite/images/${goodsData.itemphotos[0]}`
+              alt="犬3"
+            />
+          </button>
+        </div>
+      </div>
 
       <div class="goods__caption-group">
         <div class="goods__head">
@@ -51,3 +101,20 @@ const goodsData = goods.find(({ url }) => product === url);
 </Layout>
 <script src="https://kit.fontawesome.com/e1b45fa584.js" crossorigin="anonymous"
 ></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const mainImg = document.getElementById("mainImg");
+    const thumbBtns = document.querySelectorAll(".thumb-btn");
+
+    thumbBtns.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const img = this.querySelector("img");
+        mainImg.src = img.src;
+        mainImg.alt = img.alt;
+
+        thumbBtns.forEach((btn) => btn.classList.remove("active"));
+        this.classList.add("active");
+      });
+    });
+  });
+</script>

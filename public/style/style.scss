@@ -16,7 +16,7 @@ img {
 .header {
     height: 60vh;
     width: 100%;
-    background: url("/images/mv.jpg") no-repeat center/cover;
+    background: url("/12_ecsite/images/mv.jpg") no-repeat center/cover;
     position: relative;
 
     &__logo {
@@ -26,12 +26,35 @@ img {
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    &__btn {
+        position: fixed;
+        top: 2%;
+        right: 2%;
+        background-color: $white-color;
+        border-radius: 50%;
+        z-index: 2;
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+        ;
+
+        i {
+            color: $text-color;
+            font-size: 2rem;
+            padding-left: 0.3rem;
+        }
+    }
 }
 
 .article {
     width: 28%;
     font-weight: bold;
     margin-bottom: 8rem;
+    display: none;
 
     &__img {
         width: 100%;
@@ -207,10 +230,6 @@ img {
         align-items: flex-start;
     }
 
-    &__img {
-        width: 50%;
-        border: $text-color 2px solid;
-    }
 
     &__price {
         font-size: 2rem;
@@ -271,4 +290,56 @@ label {
 i {
     color: $white-color;
     padding-right: 0.5rem;
+}
+
+.img-switcher {
+    width: 50%;
+    position: relative;
+}
+
+.img-switcher>.article__soldout {
+    font-size: 1.5rem;
+    padding: 0.6rem 4rem;
+    font-weight: bold;
+}
+
+.mainImg {
+    border: $text-color 2px solid;
+    margin-bottom: 2rem;
+}
+
+.thumb-img {
+    border: $text-color 2px solid;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: space-between;
+}
+
+.thumb-btn {
+    width: calc(100%/3)-2%;
+}
+
+.expanded {
+    display: block;
+}
+
+.btn {
+    text-align: center;
+
+    &__more,
+    .expanded {
+        background-color: $white-color;
+        color: $white-color;
+        width: fit-content;
+        padding: 1rem 3rem;
+        font-size: 1.5rem;
+        border-radius: 3rem;
+        border: $text-color solid 2px;
+        border-bottom: $text-color solid 4px;
+        font-family: "Tilt Warp", sans-serif;
+        background-color: $green-color;
+    }
+
 }
