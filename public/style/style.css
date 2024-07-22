@@ -216,9 +216,17 @@ img {
   text-align: center;
   padding: 1.5rem 1rem;
   margin-top: 2rem;
+  transition: 0.1s;
+}
+.goods__purchase:hover {
+  background-color: #03A688;
 }
 .goods__notes {
   margin-top: 1rem;
+  color: rgba(34, 34, 34, 0.6);
+}
+.goods__label {
+  display: inline-block;
 }
 
 input[type=number] {

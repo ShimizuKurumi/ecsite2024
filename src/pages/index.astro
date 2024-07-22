@@ -1,17 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Goodscard from '../components/goodsCard.astro';
-import { getCollection } from 'astro:content';
-const workPages = await getCollection('goods');
+import Layout from "../layouts/Layout.astro";
+import Goodscard from "../components/goodsCard.astro";
+import { getCollection } from "astro:content";
+const workPages = await getCollection("goods");
 console.log(workPages);
 ---
 
 <Layout>
-<main class="main">
-  <h2 class="section_title">Item</h2>
-  <div class="main__inner">
-  {workPages.map(productPage => (<Goodscard title={productPage.data.title} href=`/goods/${productPage.slug}` thumbnail={productPage.data.thumbnail} body={productPage.data.description} price={productPage.data.price} state={productPage.data.state}/>
-))}
-  </div>
-</main>
+  <main class="main">
+    <h2 class="section_title">Item</h2>
+    <div class="main__inner">
+      {
+        workPages.map((productPage) => (
+          <Goodscard
+            title={productPage.data.title}
+            href=`/goods/${productPage.slug}`
+            thumbnail={productPage.data.thumbnail}
+            body={productPage.data.description}
+            price={productPage.data.price}
+            state={productPage.data.state}
+          />
+        ))
+      }
+    </div>
+  </main>
 </Layout>

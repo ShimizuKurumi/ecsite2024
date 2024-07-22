@@ -236,10 +236,20 @@ img {
         text-align: center;
         padding: 1.5rem 1rem;
         margin-top: 2rem;
+        transition: .1s;
+
+        &:hover {
+            background-color: $green-color;
+        }
     }
 
     &__notes {
         margin-top: 1rem;
+        color: rgba(34, 34, 34, 0.6);
+    }
+
+    &__label {
+        display: inline-block;
     }
 
 }
