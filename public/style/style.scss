@@ -330,8 +330,9 @@ i {
 
     &__more,
     .expanded {
+        cursor: pointer;
         background-color: $white-color;
-        color: $white-color;
+        color: $text-color;
         width: fit-content;
         padding: 1rem 3rem;
         font-size: 1.5rem;
@@ -339,7 +340,91 @@ i {
         border: $text-color solid 2px;
         border-bottom: $text-color solid 4px;
         font-family: "Tilt Warp", sans-serif;
-        background-color: $green-color;
+    }
+
+}
+
+@media screen and (max-width: 960px) {
+    .goods {
+        &__inner {
+            display: block;
+        }
+
+        &__caption-group {
+            width: 100%;
+        }
+    }
+
+    /* 960px以下で適用させたいcssを記述していく */
+    .img-switcher {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
+
+    .footer {
+        &__img {
+            width: 20%;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 520px) {
+
+    .wrapper {
+        font-size: 1rem;
+    }
+
+    .main {
+        &__inner {
+            // display: block;
+        }
+
+        padding: 7rem 0;
+    }
+
+    .article {
+        width: 45%;
+        margin-bottom: 6rem;
+
+
+        &__title {
+            font-size: 1rem;
+        }
+
+        &__soldout {
+            font-size: 0.9rem;
+            left: -1.5rem;
+            padding: 0.5rem 1.5rem;
+        }
+    }
+
+    .footer {
+        &__img {
+            width: 40%;
+        }
+    }
+
+    .goods {
+        &__inner {
+            display: block;
+        }
+
+        &__caption-group {
+            width: 100%;
+        }
+    }
+
+    .img-switcher {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
+    .img-switcher>.article__soldout {
+        padding: 0.6rem 2rem;
+        font-size: 1.2rem;
     }
 
 }
