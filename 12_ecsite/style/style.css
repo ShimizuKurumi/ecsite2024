@@ -1,0 +1,372 @@
+@charset "UTF-8";
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+.header {
+  height: 60vh;
+  width: 100%;
+  background: url("/12_ecsite/images/mv.jpg") no-repeat center/cover;
+  position: relative;
+}
+.header__logo {
+  width: 10rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header__btn {
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  background-color: #ffffff;
+  border-radius: 50%;
+  z-index: 2;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.header__btn i {
+  color: #222222;
+  font-size: 2rem;
+  padding-left: 0.3rem;
+}
+
+.article {
+  width: 28%;
+  font-weight: bold;
+  margin-bottom: 8rem;
+  display: none;
+}
+.article__img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border: #222222 2px solid;
+}
+.article__group {
+  position: relative;
+}
+.article__price {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+.article__title {
+  font-size: 1.2rem;
+}
+.article__soldout {
+  background-color: #F2357B;
+  display: inline-block;
+  color: #ffffff;
+  padding: 0.5rem 2rem;
+  position: absolute;
+  left: -1rem;
+  font-size: 1.2rem;
+  top: -1rem;
+  transform: rotate(-15deg);
+}
+
+.article__soldout[data-id=none] {
+  display: none;
+}
+
+.zeikomi {
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin-left: 0.2rem;
+  color: #222222;
+  font-weight: 500;
+}
+
+.main {
+  width: 100%;
+  background-color: #F2E85E;
+  padding: 10rem 0;
+}
+.main__inner {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  flex-wrap: wrap;
+}
+.main__inner::after {
+  content: "";
+  display: block;
+  width: 28%;
+  /* .boxに指定したwidthと同じ幅を指定する */
+  height: 0;
+}
+
+.section_title {
+  font-size: 4rem;
+  font-family: "Tilt Warp", sans-serif;
+  color: #ffffff;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #222222;
+  text-shadow: 3px 3px 0px rgb(34, 34, 34);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section_title::after {
+  content: "商品一覧";
+  display: block;
+  text-shadow: none;
+  -webkit-text-stroke-width: 0;
+  -webkit-text-stroke-color: none;
+  color: #222222;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-inline: auto;
+  background-color: #03A688;
+  font-size: 2rem;
+  border-top: #222222 solid 2px;
+  border-bottom: #222222 solid 2px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.loop {
+  -webkit-animation: loop 10s linear infinite;
+          animation: loop 10s linear infinite;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.loop2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: loop 10s -5s linear infinite;
+          animation: loop 10s -5s linear infinite;
+}
+
+@-webkit-keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.footer {
+  background-color: #222222;
+  text-align: center;
+}
+.footer__img {
+  width: 8%;
+  margin-bottom: 3rem;
+}
+.footer__copy {
+  color: #959595;
+  font-size: 0.9rem;
+}
+.footer__inner {
+  padding: 5rem;
+}
+
+.goods__title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.goods__head {
+  margin-bottom: 2rem;
+}
+.goods__ul {
+  margin-bottom: 2rem;
+}
+.goods__li {
+  margin-bottom: 0.5rem;
+}
+.goods__inner {
+  display: flex;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.goods__price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #F2357B;
+}
+.goods__caption-group {
+  width: 40%;
+}
+.goods__text {
+  line-height: 1.75;
+  letter-spacing: 0.03rem;
+  margin-bottom: 4rem;
+}
+.goods__purchase {
+  display: block;
+  background-color: #222222;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+  transition: 0.1s;
+}
+.goods__purchase:hover {
+  background-color: #03A688;
+}
+.goods__notes {
+  margin-top: 1rem;
+  color: rgba(34, 34, 34, 0.6);
+}
+.goods__label {
+  display: inline-block;
+}
+
+input[type=number] {
+  background-color: #ffffff;
+  width: 5rem;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  border: #222222 solid 2px;
+  margin-left: 1rem;
+  display: inline-block;
+}
+
+label {
+  display: block;
+}
+
+i {
+  color: #ffffff;
+  padding-right: 0.5rem;
+}
+
+.img-switcher {
+  width: 50%;
+  position: relative;
+}
+
+.img-switcher > .article__soldout {
+  font-size: 1.5rem;
+  padding: 0.6rem 4rem;
+  font-weight: bold;
+}
+
+.mainImg {
+  border: #222222 2px solid;
+  margin-bottom: 2rem;
+}
+
+.thumb-img {
+  border: #222222 2px solid;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thumb-btn {
+  width: 31.3333333333%;
+}
+
+.expanded {
+  display: block;
+}
+
+.btn {
+  text-align: center;
+}
+.btn__more,
+.btn .expanded {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #222222;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  border-radius: 3rem;
+  border: #222222 solid 2px;
+  border-bottom: #222222 solid 4px;
+  font-family: "Tilt Warp", sans-serif;
+}
+
+@media screen and (max-width: 960px) {
+  .goods__inner {
+    display: block;
+  }
+  .goods__caption-group {
+    width: 100%;
+  }
+  /* 960px以下で適用させたいcssを記述していく */
+  .img-switcher {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  .footer__img {
+    width: 20%;
+  }
+}
+@media screen and (max-width: 520px) {
+  .wrapper {
+    font-size: 1rem;
+  }
+  .main {
+    padding: 7rem 0;
+  }
+  .article {
+    width: 45%;
+    margin-bottom: 6rem;
+  }
+  .article__title {
+    font-size: 1rem;
+  }
+  .article__soldout {
+    font-size: 0.9rem;
+    left: -1.5rem;
+    padding: 0.5rem 1.5rem;
+  }
+  .footer__img {
+    width: 40%;
+  }
+  .goods__inner {
+    display: block;
+  }
+  .goods__caption-group {
+    width: 100%;
+  }
+  .img-switcher {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  .img-switcher > .article__soldout {
+    padding: 0.6rem 2rem;
+    font-size: 1.2rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

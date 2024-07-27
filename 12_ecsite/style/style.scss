@@ -1,0 +1,430 @@
+@charset "utf-8";
+$text-color: #222222;
+$article-color: #F2E85E;
+$white-color: #ffffff;
+$green-color: #03A688;
+$pink-color: #F2357B;
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+.header {
+    height: 60vh;
+    width: 100%;
+    background: url("/12_ecsite/images/mv.jpg") no-repeat center/cover;
+    position: relative;
+
+    &__logo {
+        width: 10rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__btn {
+        position: fixed;
+        top: 2%;
+        right: 2%;
+        background-color: $white-color;
+        border-radius: 50%;
+        z-index: 2;
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+        ;
+
+        i {
+            color: $text-color;
+            font-size: 2rem;
+            padding-left: 0.3rem;
+        }
+    }
+}
+
+.article {
+    width: 28%;
+    font-weight: bold;
+    margin-bottom: 8rem;
+    display: none;
+
+    &__img {
+        width: 100%;
+        margin-bottom: 1rem;
+        border: $text-color 2px solid;
+    }
+
+    &__group {
+        position: relative;
+    }
+
+    &__price {
+        font-size: 1.3rem;
+        margin-top: 0.5rem;
+    }
+
+    &__title {
+        font-size: 1.2rem;
+    }
+
+    &__soldout {
+        background-color: $pink-color;
+        display: inline-block;
+        color: $white-color;
+        padding: 0.5rem 2rem;
+        position: absolute;
+        left: -1rem;
+        font-size: 1.2rem;
+        top: -1rem;
+        transform: rotate(-15deg);
+    }
+}
+
+.article__soldout[data-id=none] {
+    display: none;
+}
+
+.zeikomi {
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin-left: 0.2rem;
+    color: $text-color;
+    font-weight: 500;
+}
+
+.main {
+    width: 100%;
+    background-color: $article-color;
+    padding: 10rem 0;
+
+
+    &__inner {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: top;
+        flex-wrap: wrap;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 28%;
+            /* .boxに指定したwidthと同じ幅を指定する */
+            height: 0;
+        }
+    }
+}
+
+.section_title {
+    font-size: 4rem;
+    font-family: "Tilt Warp", sans-serif;
+    color: $white-color;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $text-color;
+    text-shadow: 3px 3px 0px rgba(34, 34, 34, 1);
+    text-align: center;
+    margin-bottom: 4rem;
+
+    &::after {
+        content: "商品一覧";
+        display: block;
+        text-shadow: none;
+        -webkit-text-stroke-width: 0;
+        -webkit-text-stroke-color: none;
+        color: $text-color;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}
+
+.wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-inline: auto;
+    background-color: $green-color;
+    font-size: 2rem;
+    border-top: $text-color solid 2px;
+    border-bottom: $text-color solid 2px;
+    color: $white-color;
+    font-weight: 500;
+}
+
+.loop {
+    animation: loop 10s linear infinite;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.loop2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loop 10s -5s linear infinite;
+}
+
+@keyframes loop {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.footer {
+    background-color: $text-color;
+    text-align: center;
+
+    &__img {
+        width: 8%;
+        margin-bottom: 3rem;
+    }
+
+    &__copy {
+        color: #959595;
+        font-size: 0.9rem;
+    }
+
+    &__inner {
+        padding: 5rem;
+    }
+}
+
+.goods {
+    &__title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    &__head {
+        margin-bottom: 2rem;
+    }
+
+    &__ul {
+        margin-bottom: 2rem;
+    }
+
+    &__li {
+        margin-bottom: 0.5rem;
+    }
+
+    &__inner {
+        display: flex;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+
+    &__price {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $pink-color;
+    }
+
+    &__caption-group {
+        width: 40%;
+    }
+
+    &__text {
+        line-height: 1.75;
+        letter-spacing: 0.03rem;
+        margin-bottom: 4rem;
+    }
+
+    &__purchase {
+        display: block;
+        background-color: $text-color;
+        color: $white-color;
+        width: 100%;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        margin-top: 2rem;
+        transition: .1s;
+
+        &:hover {
+            background-color: $green-color;
+        }
+    }
+
+    &__notes {
+        margin-top: 1rem;
+        color: rgba(34, 34, 34, 0.6);
+    }
+
+    &__label {
+        display: inline-block;
+    }
+
+}
+
+input[type=number] {
+    background-color: $white-color;
+    width: 5rem;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    border: $text-color solid 2px;
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+label {
+    display: block;
+}
+
+i {
+    color: $white-color;
+    padding-right: 0.5rem;
+}
+
+.img-switcher {
+    width: 50%;
+    position: relative;
+}
+
+.img-switcher>.article__soldout {
+    font-size: 1.5rem;
+    padding: 0.6rem 4rem;
+    font-weight: bold;
+}
+
+.mainImg {
+    border: $text-color 2px solid;
+    margin-bottom: 2rem;
+}
+
+.thumb-img {
+    border: $text-color 2px solid;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: space-between;
+}
+
+.thumb-btn {
+    width: calc(100%/3)-2%;
+}
+
+.expanded {
+    display: block;
+}
+
+.btn {
+    text-align: center;
+
+    &__more,
+    .expanded {
+        cursor: pointer;
+        background-color: $white-color;
+        color: $text-color;
+        width: fit-content;
+        padding: 1rem 3rem;
+        font-size: 1.5rem;
+        border-radius: 3rem;
+        border: $text-color solid 2px;
+        border-bottom: $text-color solid 4px;
+        font-family: "Tilt Warp", sans-serif;
+    }
+
+}
+
+@media screen and (max-width: 960px) {
+    .goods {
+        &__inner {
+            display: block;
+        }
+
+        &__caption-group {
+            width: 100%;
+        }
+    }
+
+    /* 960px以下で適用させたいcssを記述していく */
+    .img-switcher {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
+
+    .footer {
+        &__img {
+            width: 20%;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 520px) {
+
+    .wrapper {
+        font-size: 1rem;
+    }
+
+    .main {
+        &__inner {
+            // display: block;
+        }
+
+        padding: 7rem 0;
+    }
+
+    .article {
+        width: 45%;
+        margin-bottom: 6rem;
+
+
+        &__title {
+            font-size: 1rem;
+        }
+
+        &__soldout {
+            font-size: 0.9rem;
+            left: -1.5rem;
+            padding: 0.5rem 1.5rem;
+        }
+    }
+
+    .footer {
+        &__img {
+            width: 40%;
+        }
+    }
+
+    .goods {
+        &__inner {
+            display: block;
+        }
+
+        &__caption-group {
+            width: 100%;
+        }
+    }
+
+    .img-switcher {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
+    .img-switcher>.article__soldout {
+        padding: 0.6rem 2rem;
+        font-size: 1.2rem;
+    }
+
+}
